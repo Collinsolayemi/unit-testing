@@ -29,6 +29,12 @@ describe("utilis test suite", () => {
     function expectError() {
       return utilis.parseUrl("");
     }
-    expect(expectError).toThrowError();
+    expect(expectError).toThrowError("Empty url");
+  });
+
+  test("Test invalid url with arrow function", () => {
+    expect(() => {
+      utilis.parseUrl("");
+    }).toThrow("Empty url");
   });
 });
